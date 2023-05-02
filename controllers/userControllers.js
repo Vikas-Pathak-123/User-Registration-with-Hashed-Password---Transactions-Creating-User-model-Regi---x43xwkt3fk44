@@ -23,7 +23,7 @@ const registerUser = async (req, res) => {
     // Check if user with given email already exists
     const existingUser = await users.findOne({ email });
     if (existingUser) {
-      return res.status(404).json({ message: 'User validation failed: email: Email already exists' });
+      return res.status(404).send("User validation failed: email: Email already exists");
     }
 
     // Hash password
